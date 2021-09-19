@@ -11,7 +11,6 @@ import wikipedia
 import webbrowser
 import os
 import winshell
-import pyjokes
 import feedparser
 import smtplib
 import ctypes
@@ -106,10 +105,6 @@ if __name__ == '__main__':
          
         query = takeCommand().lower()
          
-        # All the commands said by user will be
-        # stored here in 'query' and will be
-        # converted to lower case for easily
-        # recognition of command
         if 'wikipedia' in query:
             speak('Searching Wikipedia...')
             query = query.replace("wikipedia", "")
@@ -133,7 +128,7 @@ if __name__ == '__main__':
         elif 'play music' in query or "play song" in query:
             speak("Here you go with music")
             # music_dir = "G:\\Song"
-            music_dir = "C:\\Users\\GAURAV\\Music"
+            music_dir = "C:\\Users\\PS\\Music"
             songs = os.listdir(music_dir)
             print(songs)   
             random = os.startfile(os.path.join(music_dir, songs[1]))
@@ -143,32 +138,21 @@ if __name__ == '__main__':
             speak(f"Sir, the time is {strTime}")
  
         elif 'open opera' in query:
-            codePath = r"C:\\Users\\GAURAV\\AppData\\Local\\Programs\\Opera\\launcher.exe"
+            codePath = r"C:\\Users\\S\\AppData\\Local\\Programs\\Opera\\launcher.exe"
             os.startfile(codePath)
  
-        elif 'email to gaurav' in query:
+        elif 'SEND email ' in query:
             try:
-                speak("What should I say?")
+                speak("What should I say ,sir ?")
                 content = takeCommand()
                 to = "Receiver email address"   
                 sendEmail(to, content)
-                speak("Email has been sent !")
+                speak("Email has been sent sir !")
             except Exception as e:
                 print(e)
-                speak("I am not able to send this email")
+                speak("I am not able to send this email,sir")
  
-        elif 'send a mail' in query:
-            try:
-                speak("What should I say?")
-                content = takeCommand()
-                speak("whome should i send")
-                to = input()   
-                sendEmail(to, content)
-                speak("Email has been sent !")
-            except Exception as e:
-                print(e)
-                speak("I am not able to send this email")
- 
+        
         elif 'how are you' in query:
             speak("I am fine, Thank you")
             speak("How are you, Sir")
@@ -195,7 +179,7 @@ if __name__ == '__main__':
             exit()
  
         elif "who made you" in query or "who created you" in query:
-            speak("I have been created by Gaurav.")
+            speak("PS")
              
         
              
@@ -207,25 +191,13 @@ if __name__ == '__main__':
             query = query.replace("play", "")         
             webbrowser.open(query)
  
-        elif "who i am" in query:
-            speak("If you talk then definitely your human.")
- 
-        elif "why you came to world" in query:
-            speak("Thanks to Gaurav. further It's a secret")
- 
-        elif 'power point presentation' in query:
-            speak("opening Power Point presentation")
-            power = r"C:\\Users\\GAURAV\\Desktop\\Minor Project\\Presentation\\Voice Assistant.pptx"
-            os.startfile(power)
- 
-        elif 'is love' in query:
-            speak("It is 7th sense that destroy all other senses")
+
  
         elif "who are you" in query:
-            speak("I am your virtual assistant created by Gaurav")
+            speak("I am your virtual assistant ")
  
         elif 'reason for you' in query:
-            speak("I was created as a Minor project by Mister Gaurav ")
+            speak("I was created as a Minor project  ")
  
         elif 'change background' in query:
             ctypes.windll.user32.SystemParametersInfoW(20,
@@ -307,17 +279,15 @@ if __name__ == '__main__':
  
         
                      
-        # NPPR9-FWDCX-D2C8J-H872K-2YT43
-        elif "jarvis" in query:
+        elif "tony" in query:
              
             wishMe()
-            speak("Jarvis 1 point o in your service Mister")
+            speak("tony in your service sir")
             speak(assname)
  
         elif "weather" in query:
              
-            # Google Open weather website
-            # to get API of Open weather
+            
             api_key = "Api key"
             base_url = "http://api.openweathermap.org / data / 2.5 / weather?"
             speak(" City name ")
@@ -362,14 +332,5 @@ if __name__ == '__main__':
             speak("How are you Mister")
             speak(assname)
  
-        # most asked question from google Assistant
-        elif "will you be my gf" in query or "will you be my bf" in query:  
-            speak("I'm not sure about, may be you should give me some time")
- 
-        elif "how are you" in query:
-            speak("I'm fine, glad you me that")
- 
-        elif "i love you" in query:
-            speak("It's hard to understand")
  
         
